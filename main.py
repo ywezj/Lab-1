@@ -1,55 +1,100 @@
-RED = '\u001b[41m'
-BLUE = '\u001b[44m'
-WHITE = '\u001b[47m'
-END = '\u001b[0m'
 
-'''for i in range(6):
-    if i < 3:
-        print(f'{BLUE}{"  " * (2 * i + 2)}{WHITE}{"  " * (14 - 2 * i)}{END}')
+print('№1 флаг Японии')
+white = '\x1b[48;5;15m'
+red = '\x1b[48;5;196m'
+stop = '\x1b[0m'
+len = 40
+
+def linii(color, ln):
+    line = ' ' * ln
+    print(color, line, stop, end='')
+
+def flag():
+
+    for i in range(3):
+        linii(white, len)
+        print()
+    linii(white,14)
+    print(red + ' ' * 9 + white + ' ' * 17 + stop)
+
+    linii(white,12)
+    print(red + ' ' * 13 + white + ' ' * 15 + stop)
+    linii(white,12)
+    print( red + ' ' * 13 + white + ' ' * 15 + stop)
+    linii(white,12)
+    print(red + ' ' * 13 + white + ' ' * 15 + stop)
+    linii(white,12)
+    print( red + ' ' * 13 + white + ' ' * 15 + stop)
+    linii(white,14)
+    print(red + ' ' * 9 + white + ' ' * 17 + stop)
+    for i in range(3):
+        linii(white, len)
+        print()
+flag()
+
+print('№2 график функции y=3x')
+white = '\x1b[48;5;15m'
+stop = '\x1b[0m'
+
+def f(Ox):
+    print((Ox) + (white) + ' ', stop)
+
+
+h = 20
+w = 20
+
+def xy(h, w):
+    for i in range(h, 0, -1):
+        f(' ' * i )
+
+
+xy(h, w)
+
+
+
+
+
+print('№3 узор')
+white = '\x1b[48;5;15m'
+stop = '\033[0m'
+print(stop + ' ' * 8 + white + ' ' * 1 + stop + ' ' * 15 + white + ' ' * 1 + stop)
+print(stop + ' ' * 7 + white + ' ' * 1 + stop + ' ' * 1 + white + ' ' * 1 + stop + ' ' * 13  + white + ' ' * 1 + stop + ' ' * 1 +white+ ' ' * 1 + stop)
+print(stop + ' ' * 6 + white + ' ' * 1 + stop + ' ' * 3 + white + ' ' * 1 + stop + ' ' * 11  + white + ' ' * 1 + stop + ' ' * 3 +white+ ' ' * 1 + stop)
+print(stop + ' ' * 5 + white + ' ' * 1 + stop + ' ' * 5 + white + ' ' * 1 + stop + ' ' * 9  + white + ' ' * 1 + stop + ' ' * 5 +white+ ' ' * 1 + stop)
+print(stop + ' ' * 4 + white + ' ' * 1 + stop + ' ' * 7 + white + ' ' * 1 + stop + ' ' * 7  + white + ' ' * 1 + stop + ' ' * 7 +white+ ' ' * 1 + stop)
+print(stop + ' ' * 3 + white + ' ' * 1 + stop + ' ' * 9 + white + ' ' * 1 + stop + ' ' * 5  + white + ' ' * 1 + stop + ' ' * 9 +white+ ' ' * 1 + stop)
+print(stop + ' ' * 2 + white + ' ' * 1 + stop + ' ' * 11 + white + ' ' * 1 + stop + ' ' * 3  + white + ' ' * 1 + stop + ' ' * 11 +white+ ' ' * 1 + stop)
+print(stop + ' ' * 1 + white + ' ' * 1 + stop + ' ' * 13 + white + ' ' * 1 + stop + ' ' * 1  + white + ' ' * 1 + stop + ' ' * 13 +white+ ' ' * 1 + stop)
+print(white + ' ' * 1 + stop +' ' * 15  + white + ' ' * 1 + stop + ' ' * 15 + white + ' ' * 1 + stop + ' ' * 20  )
+print(stop + ' ' * 1 + white + ' ' * 1 + stop + ' ' * 13 + white + ' ' * 1 + stop + ' ' * 1  + white + ' ' * 1 + stop + ' ' * 13 +white+ ' ' * 1 + stop)
+print(stop + ' ' * 2 + white + ' ' * 1 + stop + ' ' * 11 + white + ' ' * 1 + stop + ' ' * 3  + white + ' ' * 1 + stop + ' ' * 11 +white+ ' ' * 1 + stop)
+print(stop + ' ' * 3 + white + ' ' * 1 + stop + ' ' * 9 + white + ' ' * 1 + stop + ' ' * 5  + white + ' ' * 1 + stop + ' ' * 9 +white+ ' ' * 1 + stop)
+print(stop + ' ' * 4 + white + ' ' * 1 + stop + ' ' * 7 + white + ' ' * 1 + stop + ' ' * 7  + white + ' ' * 1 + stop + ' ' * 7 +white+ ' ' * 1 + stop)
+print(stop + ' ' * 5 + white + ' ' * 1 + stop + ' ' * 5 + white + ' ' * 1 + stop + ' ' * 9  + white + ' ' * 1 + stop + ' ' * 5 +white+ ' ' * 1 + stop)
+print(stop + ' ' * 6 + white + ' ' * 1 + stop + ' ' * 3 + white + ' ' * 1 + stop + ' ' * 11  + white + ' ' * 1 + stop + ' ' * 3 +white+ ' ' * 1 + stop)
+print(stop + ' ' * 7 + white + ' ' * 1 + stop + ' ' * 1 + white + ' ' * 1 + stop + ' ' * 13  + white + ' ' * 1 + stop + ' ' * 1 +white+ ' ' * 1 + stop)
+print(stop + ' ' * 8 + white + ' ' * 1 + stop + ' ' * 15 + white + ' ' * 1 + stop)
+
+
+
+
+print('№4 Файл')
+countbolsh = 0
+countmensh = 0
+f = open('sequence.txt')
+
+l = [ float(i) for i in f]
+for i in range(250):
+    if l[i] < 0:
+        if abs(l[i]) > 5:
+            countmensh += 1
+        if abs(l[i]) < 5:
+            countbolsh += 1
+print(countbolsh,' ',countmensh)
+white = '\x1b[48;5;15m'
+stop = '\x1b[0m'
+for g in range(countbolsh):
+    if countbolsh - g > countmensh:
+        print(white + ' ' * 2 + stop)
     else:
-        print(f'{BLUE}{"  " * (12 - 2 * i)}{RED}{"  " * (4 + 2 * i)}{END}')'''
-
-
-plot_list = [[0 for i in range(10)] for i in range(10)]
-result = [0 for i in range(10)]
-
-for i in range(10):
-    result[i] = i ** 3
-
-step = round(abs(result[0] - result[9]) / 9, 2)
-print(step)
-
-for i in range(10):
-    for j in range(10):
-        if j == 0:
-            plot_list[i][j] = step * (8-i) + step
-
-for i in range(9):
-    for j in range(10):
-        if abs(plot_list[i][0] - result[9 - j]) < step:
-            for k in range(9):
-                if 8 - k == j:
-                    plot_list[i][k+1] = 1
-
-for i in range(9):
-    line = ''
-    for j in range(10):
-        if j == 0:
-            line += '\t' + str(int(plot_list[i][j])) + '\t'
-        if plot_list[i][j] == 0:
-            line += '--'
-        if plot_list[i][j] == 1:
-            line += '!!'
-    print(line)
-print('\t0\t1 2 3 4 5 6 7 8 9')
-
-for i in range(10):
-    #print(plot_list[i])
-    pass
-
-file = open('sequence.txt', 'r')
-list = []
-for number in file:
-    list.append(float(number))
-file.close()
-print(list)
+        print(white + ' ' * 2 + stop + ' ' * 3 + white + ' ' * 2 + stop )
