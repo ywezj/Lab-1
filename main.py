@@ -1,100 +1,104 @@
 
 print('№1 флаг Японии')
-white = '\x1b[48;5;15m'
-red = '\x1b[48;5;196m'
-stop = '\x1b[0m'
-len = 40
+WHITE = '\x1b[48;5;15m'
+RED = '\x1b[48;5;196m'
+STOP = '\x1b[0m'
+LENGHT = 40
 
-def linii(color, ln):
+def lines(color, ln):
     line = ' ' * ln
-    print(color, line, stop, end='')
+    print(color, line, STOP, end='')
+    print(f"{color}{' ' * ln}{STOP}", end='')
 
 def flag():
 
-    for i in range(3):
-        linii(white, len)
+    for i in range(2):
+        lines(WHITE, LENGHT)
         print()
-    linii(white,14)
-    print(red + ' ' * 9 + white + ' ' * 17 + stop)
 
-    linii(white,12)
-    print(red + ' ' * 13 + white + ' ' * 15 + stop)
-    linii(white,12)
-    print( red + ' ' * 13 + white + ' ' * 15 + stop)
-    linii(white,12)
-    print(red + ' ' * 13 + white + ' ' * 15 + stop)
-    linii(white,12)
-    print( red + ' ' * 13 + white + ' ' * 15 + stop)
-    linii(white,14)
-    print(red + ' ' * 9 + white + ' ' * 17 + stop)
-    for i in range(3):
-        linii(white, len)
+    lines(WHITE, 12)
+    print(f"{RED}{' ' * 7}{WHITE}{' ' * 22}{STOP}")
+
+    lines(WHITE, 11)
+    print(f"{RED}{' ' * 11}{WHITE}{' ' * 20}{STOP}")
+
+    lines(WHITE, 11)
+    print(f"{RED}{' ' * 11}{WHITE}{' ' * 20}{STOP}")
+
+    lines(WHITE, 11)
+    print(f"{RED}{' ' * 11}{WHITE}{' ' * 20}{STOP}")
+
+    lines(WHITE, 11)
+    print(f"{RED}{' ' * 11}{WHITE}{' ' * 20}{STOP}")
+
+    lines(WHITE, 12)
+    print(f"{RED}{' ' * 7}{WHITE}{' ' * 22}{STOP}")
+
+    for i in range(2):
+        lines(WHITE, LENGHT)
         print()
+
 flag()
 
 print('№2 график функции y=3x')
-white = '\x1b[48;5;15m'
-stop = '\x1b[0m'
+HEIGHT = 20
+WIDTH = 20
 
-def f(Ox):
-    print((Ox) + (white) + ' ', stop)
-
-
-h = 20
-w = 20
-
-def xy(h, w):
-    for i in range(h, 0, -1):
-        f(' ' * i )
+def print_line(spaces):
+    print(f"{' ' * spaces}{WHITE} {STOP}")
 
 
-xy(h, w)
+def print_graph(height):
+    for i in range(height, 0, -1):
+        print_line(i)
 
 
+print_graph(HEIGHT)
 
 
 
 print('№3 узор')
-white = '\x1b[48;5;15m'
-stop = '\033[0m'
-print(stop + ' ' * 8 + white + ' ' * 1 + stop + ' ' * 15 + white + ' ' * 1 + stop)
-print(stop + ' ' * 7 + white + ' ' * 1 + stop + ' ' * 1 + white + ' ' * 1 + stop + ' ' * 13  + white + ' ' * 1 + stop + ' ' * 1 +white+ ' ' * 1 + stop)
-print(stop + ' ' * 6 + white + ' ' * 1 + stop + ' ' * 3 + white + ' ' * 1 + stop + ' ' * 11  + white + ' ' * 1 + stop + ' ' * 3 +white+ ' ' * 1 + stop)
-print(stop + ' ' * 5 + white + ' ' * 1 + stop + ' ' * 5 + white + ' ' * 1 + stop + ' ' * 9  + white + ' ' * 1 + stop + ' ' * 5 +white+ ' ' * 1 + stop)
-print(stop + ' ' * 4 + white + ' ' * 1 + stop + ' ' * 7 + white + ' ' * 1 + stop + ' ' * 7  + white + ' ' * 1 + stop + ' ' * 7 +white+ ' ' * 1 + stop)
-print(stop + ' ' * 3 + white + ' ' * 1 + stop + ' ' * 9 + white + ' ' * 1 + stop + ' ' * 5  + white + ' ' * 1 + stop + ' ' * 9 +white+ ' ' * 1 + stop)
-print(stop + ' ' * 2 + white + ' ' * 1 + stop + ' ' * 11 + white + ' ' * 1 + stop + ' ' * 3  + white + ' ' * 1 + stop + ' ' * 11 +white+ ' ' * 1 + stop)
-print(stop + ' ' * 1 + white + ' ' * 1 + stop + ' ' * 13 + white + ' ' * 1 + stop + ' ' * 1  + white + ' ' * 1 + stop + ' ' * 13 +white+ ' ' * 1 + stop)
-print(white + ' ' * 1 + stop +' ' * 15  + white + ' ' * 1 + stop + ' ' * 15 + white + ' ' * 1 + stop + ' ' * 20  )
-print(stop + ' ' * 1 + white + ' ' * 1 + stop + ' ' * 13 + white + ' ' * 1 + stop + ' ' * 1  + white + ' ' * 1 + stop + ' ' * 13 +white+ ' ' * 1 + stop)
-print(stop + ' ' * 2 + white + ' ' * 1 + stop + ' ' * 11 + white + ' ' * 1 + stop + ' ' * 3  + white + ' ' * 1 + stop + ' ' * 11 +white+ ' ' * 1 + stop)
-print(stop + ' ' * 3 + white + ' ' * 1 + stop + ' ' * 9 + white + ' ' * 1 + stop + ' ' * 5  + white + ' ' * 1 + stop + ' ' * 9 +white+ ' ' * 1 + stop)
-print(stop + ' ' * 4 + white + ' ' * 1 + stop + ' ' * 7 + white + ' ' * 1 + stop + ' ' * 7  + white + ' ' * 1 + stop + ' ' * 7 +white+ ' ' * 1 + stop)
-print(stop + ' ' * 5 + white + ' ' * 1 + stop + ' ' * 5 + white + ' ' * 1 + stop + ' ' * 9  + white + ' ' * 1 + stop + ' ' * 5 +white+ ' ' * 1 + stop)
-print(stop + ' ' * 6 + white + ' ' * 1 + stop + ' ' * 3 + white + ' ' * 1 + stop + ' ' * 11  + white + ' ' * 1 + stop + ' ' * 3 +white+ ' ' * 1 + stop)
-print(stop + ' ' * 7 + white + ' ' * 1 + stop + ' ' * 1 + white + ' ' * 1 + stop + ' ' * 13  + white + ' ' * 1 + stop + ' ' * 1 +white+ ' ' * 1 + stop)
-print(stop + ' ' * 8 + white + ' ' * 1 + stop + ' ' * 15 + white + ' ' * 1 + stop)
 
+print(f"{STOP}{' ' * 8}{WHITE}{' ' * 1}{STOP}{' ' * 15}{WHITE}{' ' * 1}{STOP}")
+indent=7
+distance=13
+between=1
+for i in range(7):
+    print(f"{STOP}{' ' * indent}{WHITE}{' ' * 1}{STOP}{' ' * between}{WHITE}{' ' * 1}{STOP}{' ' * distance}{WHITE}{' ' * 1}{STOP}{' ' * between}{WHITE}{' ' * 1}{STOP}")
+    indent-=1
+    distance-=2
+    between+=2
+    
 
+print(f"{WHITE}{' ' * 1}{STOP}{' ' * 15}{WHITE}{' ' * 1}{STOP}{' ' * 15}{WHITE}{' ' * 1}{STOP}{' ' * 1}")
+
+indent=1
+distance=1
+between=13
+for i in range(7):
+    print(f"{STOP}{' ' * indent}{WHITE}{' ' * 1}{STOP}{' ' * between}{WHITE}{' ' * 1}{STOP}{' ' * distance}{WHITE}{' ' * 1}{STOP}{' ' * between}{WHITE}{' ' * 1}{STOP}")
+    indent+=1
+    distance+=2
+    between-=2
+
+print(f"{STOP}{' ' * 8}{WHITE}{' ' * 1}{STOP}{' ' * 15}{WHITE}{' ' * 1}{STOP}")
 
 
 print('№4 Файл')
-countbolsh = 0
-countmensh = 0
-f = open('sequence.txt')
+countmore = 0
+countless = 0
+with open('sequence.txt') as sequence:
 
-l = [ float(i) for i in f]
+    data = [ float(line) for line in sequence]
 for i in range(250):
-    if l[i] < 0:
-        if abs(l[i]) > 5:
-            countmensh += 1
-        if abs(l[i]) < 5:
-            countbolsh += 1
-print(countbolsh,' ',countmensh)
-white = '\x1b[48;5;15m'
-stop = '\x1b[0m'
-for g in range(countbolsh):
-    if countbolsh - g > countmensh:
-        print(white + ' ' * 2 + stop)
+    if data[i] < 0:
+        if abs(data[i]) > 5:
+            countless += 1
+        if abs(data[i]) < 5:
+            countmore += 1
+print(countmore,' ',countless)
+for g in range(countmore):
+    if countmore - g > countless:
+        print(WHITE + ' ' * 2 + STOP)
     else:
-        print(white + ' ' * 2 + stop + ' ' * 3 + white + ' ' * 2 + stop )
+        print(WHITE + ' ' * 2 + STOP + ' ' * 3 + WHITE + ' ' * 2 + STOP )
